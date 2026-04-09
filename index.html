@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <title>FoodScan - Analizzatore prodotti</title>
   <link rel="stylesheet" href="style.css">
-  <!-- QuaggaJS per lo scanner -->
-  <script src="https://unpkg.com/quagga/dist/quagga.min.js"></script>
 </head>
+
 <body>
   <header>
     <h1>FoodScan</h1>
-    <p class="subtitle">Analizza prodotti alimentari tramite codice a barre e API OpenFoodFacts</p>
+    <p class="subtitle">Analizza prodotti alimentari tramite API OpenFoodFacts</p>
   </header>
 
   <main>
     <section class="left-panel">
       <div class="card">
         <h2>Cerca prodotto</h2>
+
         <form id="barcode-form">
           <label for="barcode-input">Codice a barre</label>
           <div class="input-row">
@@ -25,18 +25,12 @@
           </div>
         </form>
 
-        <button id="scan-btn" class="btn secondary full-width">
-          📷 Scannerizza con fotocamera
-        </button>
-
         <div id="message"></div>
       </div>
 
       <div class="card">
         <h2>Storico ricerche</h2>
-        <ul id="history-list" class="history-list">
-          <!-- Riempito da JS -->
-        </ul>
+        <ul id="history-list" class="history-list"></ul>
       </div>
     </section>
 
@@ -44,29 +38,22 @@
       <div id="product-card" class="card hidden">
         <h2 id="product-name"></h2>
         <img id="product-image" alt="Immagine prodotto">
+
         <p><strong>Marca:</strong> <span id="product-brand"></span></p>
         <p><strong>Categoria:</strong> <span id="product-category"></span></p>
+
         <p>
           <strong>NutriScore:</strong>
           <span id="product-nutriscore" class="nutriscore-badge"></span>
         </p>
+
         <p><strong>Allergeni:</strong> <span id="product-allergens"></span></p>
       </div>
     </section>
   </main>
 
-  <!-- Overlay scanner -->
-  <div id="scanner-overlay" class="scanner-overlay hidden">
-    <div class="scanner-box">
-      <h2>Scanner codice a barre</h2>
-      <p>Inquadra il codice a barre del prodotto.</p>
-      <div id="scanner" class="scanner-view"></div>
-      <button id="close-scanner-btn" class="btn danger full-width">Chiudi scanner</button>
-    </div>
-  </div>
-
   <footer>
-    <p>Progetto scolastico - FoodScan con API OpenFoodFacts, QuaggaJS e JavaScript</p>
+    <p>Progetto scolastico - FoodScan</p>
   </footer>
 
   <script src="script.js"></script>
