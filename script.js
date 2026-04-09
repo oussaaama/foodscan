@@ -1,4 +1,3 @@
-// Elementi base
 const form = document.getElementById("barcode-form");
 const barcodeInput = document.getElementById("barcode-input");
 const messageDiv = document.getElementById("message");
@@ -13,17 +12,11 @@ const allergensEl = document.getElementById("product-allergens");
 
 const historyList = document.getElementById("history-list");
 
-// --------------------
-// Messaggi
-// --------------------
 function showMessage(text, isError = false) {
   messageDiv.textContent = text;
   messageDiv.style.color = isError ? "#b91c1c" : "#15803d";
 }
 
-// --------------------
-// API OpenFoodFacts
-// --------------------
 async function fetchProduct(barcode) {
   showMessage("Caricamento...");
   productCard.classList.add("hidden");
@@ -48,9 +41,6 @@ async function fetchProduct(barcode) {
   }
 }
 
-// --------------------
-// Rendering prodotto
-// --------------------
 function renderProduct(product) {
 
   // Nome prodotto
@@ -62,13 +52,11 @@ function renderProduct(product) {
 
   nameEl.textContent = name;
 
-  // Marca
   brandEl.textContent =
     product.brands ||
     product.brands_tags?.join(", ") ||
     "N/D";
 
-  // Categoria
   const category =
     product.categories_it ||
     product.categories_en ||
@@ -77,7 +65,6 @@ function renderProduct(product) {
 
   categoryEl.textContent = category;
 
-  // Allergeni
   const allergens =
     product.allergens_it ||
     product.allergens_en ||
@@ -86,7 +73,6 @@ function renderProduct(product) {
 
   allergensEl.textContent = allergens;
 
-  // NutriScore
   const nutri = product.nutriscore_grade
     ? product.nutriscore_grade.toUpperCase()
     : "NA";
@@ -94,7 +80,6 @@ function renderProduct(product) {
   nutriscoreEl.textContent = nutri;
   nutriscoreEl.className = "nutriscore-badge nutri-" + nutri;
 
-  // Immagine
   if (product.image_front_url) {
     imageEl.src = product.image_front_url;
     imageEl.classList.remove("hidden");
@@ -105,9 +90,6 @@ function renderProduct(product) {
   productCard.classList.remove("hidden");
 }
 
-// --------------------
-// Storico ricerche
-// --------------------
 const HISTORY_KEY = "foodscan_history";
 
 function loadHistory() {
@@ -150,15 +132,9 @@ function renderHistory() {
   });
 }
 
-// --------------------
-// Form submit
-// --------------------
 form.addEventListener("submit", e => {
   e.preventDefault();
   fetchProduct(barcodeInput.value.trim());
 });
 
-// --------------------
-// Init
-// --------------------
 renderHistory();
