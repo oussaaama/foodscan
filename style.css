@@ -85,7 +85,6 @@ input[type="text"] {
 .nutri-E { background: #ef4444; }
 .nutri-NA { background: #6b7280; }
 
-/* Storico */
 .history-list { list-style: none; padding: 0; }
 .history-list li {
   padding: 8px;
@@ -95,7 +94,6 @@ input[type="text"] {
   cursor: pointer;
 }
 
-/* Scanner */
 .scanner-overlay {
   position: fixed;
   inset: 0;
