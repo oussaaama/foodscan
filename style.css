@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb33;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.05s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.btn.secondary:hover {
+  background: #d1d5db;
+}
+
+.btn.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn.danger:hover {
+  background: #dc2626;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#message {
+  margin-top: 10px;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+#product-card img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0 15px;
+  object-fit: contain;
+  background: #f9fafb;
+  padding: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* NutriScore badge */
+.nutriscore-badge {
+  display: inline-block;
+  min-width: 32px;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Colori NutriScore */
+.nutri-A {
+  background: #16a34a; /* verde */
+}
+
+.nutri-B {
+  background: #22c55e; /* verde chiaro */
+}
+
+.nutri-C {
+  background: #eab308; /* giallo */
+}
+
+.nutri-D {
+  background: #f97316; /* arancione */
+}
+
+.nutri-E {
+  background: #ef4444; /* rosso */
+}
+
+.nutri-NA {
+  background: #6b7280; /* grigio */
+}
+
+/* Storico ricerche */
+.history-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.history-list li {
+  padding: 6px 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.history-list li:nth-child(odd) {
+  background: #f9fafb;
+}
+
+.history-list li:nth-child(even) {
+  background: #eef2ff;
+}
+
+.history-list li:hover {
+  background: #e0f2fe;
+}
+
+.history-code {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+/* Scanner overlay */
+.scanner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.scanner-box {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+}
+
+.scanner-box h2 {
+  margin-top: 0;
+}
+
+.scanner-view {
+  width: 100%;
+  height: 260px;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0 16px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+}
