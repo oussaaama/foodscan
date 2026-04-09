@@ -21,7 +21,7 @@ async function fetchProduct(barcode) {
   showMessage("Caricamento...");
   productCard.classList.add("hidden");
 
-  const url = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`;
+  const url = `https://world.openfoodfacts.org/api/v2/product/${barcode}.json`;
 
   try {
     const response = await fetch(url);
