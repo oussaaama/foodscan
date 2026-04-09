@@ -28,8 +28,7 @@ async function fetchProduct(barcode) {
   showMessage("Caricamento...");
   productCard.classList.add("hidden");
 
-  const url = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json?lc=it`;
-
+  const url = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`;
 
   try {
     const response = await fetch(url);
@@ -53,11 +52,41 @@ async function fetchProduct(barcode) {
 // Rendering prodotto
 // --------------------
 function renderProduct(product) {
-  nameEl.textContent = product.product_name || "Nome non disponibile";
-  brandEl.textContent = product.brands || "N/D";
-  categoryEl.textContent = product.categories || "N/D";
-  allergensEl.textContent = product.allergens || "Non specificati";
 
+  // Nome prodotto
+  const name =
+    product.product_name_it ||
+    product.product_name_en ||
+    product.product_name ||
+    "Nome non disponibile";
+
+  nameEl.textContent = name;
+
+  // Marca
+  brandEl.textContent =
+    product.brands ||
+    product.brands_tags?.join(", ") ||
+    "N/D";
+
+  // Categoria
+  const category =
+    product.categories_it ||
+    product.categories_en ||
+    product.categories ||
+    "N/D";
+
+  categoryEl.textContent = category;
+
+  // Allergeni
+  const allergens =
+    product.allergens_it ||
+    product.allergens_en ||
+    product.allergens ||
+    "Non specificati";
+
+  allergensEl.textContent = allergens;
+
+  // NutriScore
   const nutri = product.nutriscore_grade
     ? product.nutriscore_grade.toUpperCase()
     : "NA";
@@ -65,6 +94,7 @@ function renderProduct(product) {
   nutriscoreEl.textContent = nutri;
   nutriscoreEl.className = "nutriscore-badge nutri-" + nutri;
 
+  // Immagine
   if (product.image_front_url) {
     imageEl.src = product.image_front_url;
     imageEl.classList.remove("hidden");
