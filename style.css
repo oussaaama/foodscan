@@ -1,4 +1,136 @@
-/* Barra punteggio salute */
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #2563eb, #10b981);
+  color: white;
+}
+
+.subtitle {
+  opacity: 0.9;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.left-panel, .right-panel { flex: 1; }
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.input-row { display: flex; gap: 8px; }
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary { background: #2563eb; color: white; }
+.btn.secondary { background: #e5e7eb; }
+.btn.danger { background: #ef4444; color: white; }
+
+.full-width { width: 100%; margin-top: 10px; }
+
+#product-card img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  margin: 10px 0;
+  background: #f9fafb;
+  padding: 8px;
+}
+
+.hidden { display: none; }
+
+/* NutriScore */
+.nutriscore-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  color: white;
+}
+
+.nutri-A { background: #16a34a; }
+.nutri-B { background: #22c55e; }
+.nutri-C { background: #eab308; }
+.nutri-D { background: #f97316; }
+.nutri-E { background: #ef4444; }
+.nutri-NA { background: #6b7280; }
+
+.history-list { list-style: none; padding: 0; }
+.history-list li {
+  padding: 8px;
+  background: #f9fafb;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Scanner overlay */
+.scanner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scanner-box {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.scanner-view {
+  width: 100%;
+  height: 300px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #6b7280;
+}
+
+@media (max-width: 800px) {
+  main { flex-direction: column; }
+}
+
+/* ------------------------------
+   🔥 PUNTEGGIO SALUTE + CONSIGLI
+------------------------------ */
+
 .health-bar-container {
   width: 100%;
   height: 18px;
@@ -15,13 +147,11 @@
   transition: width 0.4s ease, background 0.4s ease;
 }
 
-/* Testo punteggio */
 #health-score-text {
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-/* Lista consigli */
 #health-advice-list {
   padding-left: 18px;
   margin-top: 10px;
