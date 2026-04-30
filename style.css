@@ -180,3 +180,34 @@ footer {
   margin-bottom: 6px;
   color: #374151;
 }
+
+
+/* HERO SECTION */
+.hero {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 40px 25px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.hero h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #4b5563;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 10px;
+}
