@@ -7,6 +7,7 @@ body {
   color: #111827;
 }
 
+/* HEADER */
 header {
   text-align: center;
   padding: 20px;
@@ -18,6 +19,7 @@ header {
   opacity: 0.9;
 }
 
+/* LAYOUT PRINCIPALE */
 main {
   display: flex;
   gap: 20px;
@@ -26,8 +28,11 @@ main {
   margin: auto;
 }
 
-.left-panel, .right-panel { flex: 1; }
+.left-panel, .right-panel {
+  flex: 1;
+}
 
+/* CARD GENERICA */
 .card {
   background: white;
   padding: 18px;
@@ -36,7 +41,11 @@ main {
   margin-bottom: 20px;
 }
 
-.input-row { display: flex; gap: 8px; }
+/* INPUT E BOTTONI */
+.input-row {
+  display: flex;
+  gap: 8px;
+}
 
 input[type="text"] {
   flex: 1;
@@ -57,8 +66,12 @@ input[type="text"] {
 .btn.secondary { background: #e5e7eb; }
 .btn.danger { background: #ef4444; color: white; }
 
-.full-width { width: 100%; margin-top: 10px; }
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+}
 
+/* SCHEDA PRODOTTO */
 #product-card img {
   width: 100%;
   max-width: 320px;
@@ -68,7 +81,9 @@ input[type="text"] {
   padding: 8px;
 }
 
-.hidden { display: none; }
+.hidden {
+  display: none;
+}
 
 /* NutriScore */
 .nutriscore-badge {
@@ -85,7 +100,12 @@ input[type="text"] {
 .nutri-E { background: #ef4444; }
 .nutri-NA { background: #6b7280; }
 
-.history-list { list-style: none; padding: 0; }
+/* STORICO */
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
 .history-list li {
   padding: 8px;
   background: #f9fafb;
@@ -94,7 +114,7 @@ input[type="text"] {
   cursor: pointer;
 }
 
-/* Scanner overlay */
+/* OVERLAY SCANNER (se lo userai) */
 .scanner-overlay {
   position: fixed;
   inset: 0;
@@ -117,20 +137,19 @@ input[type="text"] {
   height: 300px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 10px;
   color: #6b7280;
 }
 
+/* RESPONSIVE */
 @media (max-width: 800px) {
   main { flex-direction: column; }
 }
 
-/* ------------------------------
-   🔥 PUNTEGGIO SALUTE + CONSIGLI
------------------------------- */
-
+/* 🔥 PUNTEGGIO SALUTE + CONSIGLI */
 .health-bar-container {
   width: 100%;
   height: 18px;
