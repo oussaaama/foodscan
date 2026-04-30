@@ -14,6 +14,8 @@
 
   <main>
     <section class="left-panel">
+
+      <!-- CERCA PRODOTTO -->
       <div class="card">
         <h2>Cerca prodotto</h2>
 
@@ -28,13 +30,27 @@
         <div id="message"></div>
       </div>
 
+      <!-- STORICO -->
       <div class="card">
         <h2>Storico ricerche</h2>
         <ul id="history-list" class="history-list"></ul>
       </div>
+
+      <!-- PREFERENZE -->
+      <div class="card">
+        <h2>Preferenze utente</h2>
+
+        <label><input type="checkbox" id="pref-low-sugar"> Evita zuccheri alti</label><br>
+        <label><input type="checkbox" id="pref-low-satfat"> Evita grassi saturi</label><br>
+        <label><input type="checkbox" id="pref-low-salt"> Evita sale alto</label><br>
+        <label><input type="checkbox" id="pref-no-additives"> Evita molti additivi</label>
+      </div>
+
     </section>
 
     <section class="right-panel">
+
+      <!-- SCHEDA PRODOTTO -->
       <div id="product-card" class="card hidden">
         <h2 id="product-name"></h2>
         <img id="product-image" alt="Immagine prodotto">
@@ -49,6 +65,21 @@
 
         <p><strong>Allergeni:</strong> <span id="product-allergens"></span></p>
       </div>
+
+      <!-- PUNTEGGIO SALUTE -->
+      <div id="health-score-section" class="card hidden">
+        <h2>Punteggio Salute</h2>
+
+        <div class="health-bar-container">
+          <div id="health-bar" class="health-bar"></div>
+        </div>
+
+        <p id="health-score-text"></p>
+
+        <h3>Consigli personalizzati</h3>
+        <ul id="health-advice-list"></ul>
+      </div>
+
     </section>
   </main>
 
